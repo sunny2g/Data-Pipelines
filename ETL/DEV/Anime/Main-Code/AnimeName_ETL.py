@@ -8,15 +8,22 @@ import os
 sys.path.append(r'C:\Users\Metac\Downloads\python-code\Data-Pipelines\ETL\DEV\Anime\Params')
 # Now you can import 'credentials' from Params.py
 from credentials import MySQL_username, MySQL_password
-from globals import download_path
+from globals import download_path, current_mal_id
+
+print(f"the current mal_id is {current_mal_id}")
+
+from globals import current_mal_id, Param_path
+from include import automate_global_tasks
+
+
 
 
 ## Actual code
 
 # Part 1 - EXTRACT 
 
-for i in range(10):
-    id=i
+for i in range(5):
+    automate_global_tasks.var_change('current_mal_id',5,f"{Param_path}globals.py",current_mal_id)
     url_value=f'https://api.jikan.moe/v4/anime/{id}/full'
     print(url_value)
     url = url_value

@@ -1,25 +1,7 @@
-import sys
-import os
-# Add the path to the directory containing 'Params.py' to sys.path
-sys.path.append(r'C:\Users\Metac\Downloads\python-code\Data-Pipelines\ETL\DEV\Anime\Params')
-# Now you can import 'credentials' from Params.py
-from credentials import MySQL_username, MySQL_password
-
-
-from globals import current_mal_id, Param_path
-from include import automate_global_tasks
-
-automate_global_tasks.var_change('current_mal_id',5,f"{Param_path}globals.py",current_mal_id)
-
-
-
-
-
-
-
-
 from globals import current_mal_id, Param_path
 
+# var_change is a function build to auto increment integer store in a param file.
+# it requires 4 inputs Variable Name(var_name), Limiting number to increase(limiter), file name to read/change and store the value(param_file), current variable value(var_value) 
 def var_change(var_name,limiter,param_file,var_value):
     id=var_value
     limit = var_value + limiter
@@ -38,29 +20,5 @@ def var_change(var_name,limiter,param_file,var_value):
             file.writelines(file_content)
         print("Parameter updated successfully!")
         id=id + 1
-var_change('current_mal_id',4,f"{Param_path}globals.py",current_mal_id)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-####### print(current_mal_id)
-####### id=1
-####### file_name=f'{download_path}\extrt{id}.json'
-####### 
-####### print(file_name)
-####### 
-####### with open( file_name, 'w') as json_file:
-#######     pass
-####### 
-####### 
 
