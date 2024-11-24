@@ -1,3 +1,8 @@
+# Project sensitive Files 
+ETL/DEV/Anime/Params/credentials.py
+ETL/DEV/Anime/Params/globals.py
+ETL/DEV/Anime/Datasets/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -46,7 +51,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py,cover
+cover
 .hypothesis/
 .pytest_cache/
 cover/
